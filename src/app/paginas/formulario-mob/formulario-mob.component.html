@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario da Mob </title>
+
+
+  <title>Formulário da Mob</title>
+
+</head>
+
+<body>
+
+
+  <div class="container">
+    <section class="header">
+      <h2>Formulário Mob</h2>
+    </section>
+
+
+    <form id="form" [formGroup]="checkoutForm" class="form">
+      <div class="form-content ">
+        <label for="username">Nome Do Usuario ...</label>
+        <input formControlName="usuario" type="text" id="username" placeholder="Digite o Nome de Usuario..." />
+        <p style="color: red" *ngIf="usuario?.touched && usuario?.errors?.['required']">preencha o seu nome ...</p>
+      </div>
+
+      <div class="form-content">
+        <label for="email">Endereço de E-mail</label>
+        <input type="email" id="email" placeholder="Digite o Seu Email" />
+        <p style="color: red" *ngIf="email?.touched && email?.errors?.['required']">preencha o seu email ...</p>
+      </div>
+
+      <div class="form-content">
+        <label for="cep">Cep</label>
+        <input formControlName="cep" type="text" id="cep" placeholder="Digite seu cep" />
+        <p style="color: red" *ngIf="cep?.touched && cep?.errors?.['required']">preencha o seu cep ...</p>
+      </div>
+
+      <button (click)="buscarcep()">buscar</button>
+      <div style="margin-top:  10px; margin-bottom: 10px;">
+        <p>{{endereco?.logradouro}}</p>
+        <p>{{endereco?.bairro}}</p>
+        <p>{{endereco?.localidade}} - {{endereco?.uf}} </p>
+       
+      
+      </div>
+
+
+      <div class="form-content">
+        <label for="numero">Número</label>
+        <input type="text" id="numero" placeholder="Digite o número da casa" />
+        <p style="color: red">preencha o número ...</p>
+      </div>
+
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Quais atividades voce deseja se inscrever ?
+          </label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Preferência de Gênero</option>
+            <option value="1">Gênero Masculino </option>
+            <option value="2">Gênero Feminino</option>
+            <option value="3">Prefiro não dizer</option>
+          </select>
+        </div>
+
+
+        <div class="form-content">
+          <label for="data_nasc">Data nascimento</label>
+          <input type="date" id="data_nasc" placeholder="Digite a data" />
+          <p style="color: red">preencha a data ...</p>
+        </div>
+
+
+
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Qual atividade você deseja se inscrever?
+            </label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+              <option selected>Escolher...</option>
+              <option value="1">Psicoterapia</option>
+              <option value="2">Programação</option>
+              <option value="3">Computação Básica</option>
+              <option value="4">Serviço Social</option>
+              <option value="5">Arte cultura e educação</option>
+              <option value="6">Oficinas temáticas</option>
+            </select>
+          </div>
+
+
+          <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+
+              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Formação academica </label>
+              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+
+
+                <option selected>Escolher...</option>
+                <option value="1">Ensino Fundamental 1 </option>
+                <option value="2">Ensino Fundamental 2 </option>
+                <option value="3">Ensino Médio </option>
+                <option value="3">Ensino Superior </option>
+
+              </select>
+            </div>
+
+            <button type="submit">cadrastar</button>
+
+          </div>
+        </div>
+
+
+        <nav class="redes">
+
+
+          <a href="https://www.instagram.com/programamob/">
+            <img src="/assets/instagram.png" alt="" width="60px" height="60px">
+          </a>
+
+          <a href="https://www.facebook.com/Programa.MOBOFICIAL/">
+            <img src="/assets/face.png" alt="" width="60px" height="60px">
+          </a>
+        </nav>
+        <footer>
+          <div id="footer_content">
+
+            <ul class="footer-list">
+              <li>
+
+                <h3>MOB</h3>
+
+              </li>
+              <li>
+                <a href="https://moborg.netlify.app/" class="footer-link">Home</a>
+
+              </li>
+
+
+              <li>
+                <a href="https://moborg.netlify.app/Quemsomos" class="footer-link">Quem Somos</a>
+
+
+              </li>
+
+
+            </ul>
+            <ul>
+
+              <li>
+
+                <h3>Parceiros</h3>
+
+              </li>
+              <li>
+                <a href="https://www.kaspper.com/home" class="footer-link">Kaspper</a>
+
+              </li>
+
+
+
+              <li>
+                <a href="https://moborg.netlify.app/Cativar" class="footer-link">Instituto Cativar</a>
+
+              </li>
+
+              <li>
+                <a href="https://moborg.netlify.app/Forum" class="footer-link">Fórum Antirracista</a>
+
+              </li>
+
+
+            </ul>
+            <div id="footer_copyright">
+
+            </div>
+          </div>
+        </footer>
